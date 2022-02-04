@@ -7,7 +7,7 @@ from datetime import datetime
 from replit import db
 
 db['sent'] = False
-db['msg_id'] = False
+db['msg_id'] = 0
 
 # Instantiate a discord client
 client = commands.Bot(command_prefix = '%')
