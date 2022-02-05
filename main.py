@@ -58,11 +58,9 @@ async def sendprice():
                                                   f'YEBoo-1641283101-0-gaNycGzNCNE)', inline=False)
   embed.add_field(name='Last Updated:', value=f'{dt_string} GMT', inline=False)
 
-
   # -------------------------------------------------------------------------------------------
   # First time sending embed and updating logic
   # -------------------------------------------------------------------------------------------
-
 
   if db['sent'] == False:
     msg = await channel.send(embed=embed) # Send embed to channel
@@ -77,7 +75,5 @@ async def sendprice():
     await asyncio.sleep(300)
     await sendprice()
     
-
 keep_alive()
-
 client.run(TOKEN)
