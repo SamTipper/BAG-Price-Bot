@@ -20,7 +20,7 @@ async def on_ready():
 
 # Function for our logic & embed we'll be using. Sending the embed then updating in chat every 5 mins
 async def sendprice():
-  dt_string = datetime.now().strftime("%m/%d/%Y %H:%M:%S") # Returns GMT
+  dt_string = datetime.now().strftime("%m/%d/%Y %H:%M:%S") # # Store & format current GMT time
 
   # Requests data from the Coingecko API
   URL ='https://api.coingecko.com/api/v3/simple/price?ids=blockchain-adventurers-guild&vs_currencies=usd'
