@@ -9,9 +9,7 @@ from replit import db
 db['sent'] = False
 db['msg_id'] = 0
 
-# Instantiate a discord client
-client = commands.Bot(command_prefix = '%')
-
+client = commands.Bot(command_prefix = '%') # Instantiate a discord client
 
 # Getting the bot ready
 @client.event
