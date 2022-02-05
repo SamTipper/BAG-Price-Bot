@@ -26,9 +26,7 @@ async def on_ready():
 async def sendprice():
 
   # Gets the current time
-  now = datetime.now()
-  dt_string = now.strftime("%m/%d/%Y %H:%M:%S")
-  magenta = discord.Color.from_rgb(255, 51, 204)
+  dt_string = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
 
   # Requests data from the Coingecko API
   URL ='https://api.coingecko.com/api/v3/simple/price?ids=blockchain-adventurers-guild&vs_currencies=usd'
@@ -40,7 +38,7 @@ async def sendprice():
   embed = discord.Embed(
     title = f'**BAG Price**',
     description = 'Updated every five minutes',
-    colour = magenta
+    colour = discord.Color.from_rgb(255, 51, 204)
   )
 
   # All of the text fields & images for the embed
