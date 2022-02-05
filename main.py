@@ -47,8 +47,10 @@ async def sendprice():
   )
 
   # All of the text fields & images for the embed
-  embed.set_footer(text='Blockchain Adventurers Guild',icon_url='https://cdn.discordapp.com/icons/825651993816727603/'
-                                                                'e2da84a02a7e521811136a1bf5ac8390.webp?size=96')
+  embed.set_footer(text='Blockchain Adventurers Guild',
+                   icon_url='https://cdn.discordapp.com/icons/825651993816727603/'
+                   'e2da84a02a7e521811136a1bf5ac8390.webp?size=96')
+  
   embed.set_thumbnail(url='https://assets.coingecko.com/coins/images/14863/small/3iw7MAi.png?1618810870')
   embed.add_field(name='Price:', value=f'${price}', inline=False)
   embed.add_field(name="BAG on Coingecko:", value=f'[coingecko](https://www.coingecko.com/en/coins/blockchain-adventure'
@@ -63,24 +65,15 @@ async def sendprice():
 
 
   if db['sent'] == False:
-
-    # Sends the embed and stores it in the "msg" variable
-    msg = await channel.send(embed=embed)
-
-    # Stores the message ID into the database for future use
-    db['msg_id'] = msg.id
+    msg = await channel.send(embed=embed) # Send embed to channel
+    db['msg_id'] = msg.id # Store in Replit db
     db['sent'] = True
     await asyncio.sleep(300)
     await sendprice()
-
-
-  # This ensures that when the bot is rebooted, it will no longer spam the chat
-  else:
+  else:  # When the bot is rebooted, don't spam the chat
     msg = db['msg_id']
     msg = await channel.fetch_message(msg)
-
-    # Edits the message
-    await msg.edit(embed=embed)
+    await msg.edit(embed=embed) # Edit msg in channel
     await asyncio.sleep(300)
     await sendprice()
     
