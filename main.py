@@ -11,8 +11,7 @@ db['msg_id'] = 0
 
 client = commands.Bot(command_prefix = '%') # Instantiate a discord client
 
-# Getting the bot ready
-@client.event
+@client.event # Getting the bot ready
 async def on_ready():
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name = "LoFi Radio in the"
                                                                                                      " LoFi Lounge"))
