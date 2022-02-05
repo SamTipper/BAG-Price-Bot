@@ -19,11 +19,9 @@ async def on_ready():
   print('You have logged in as {0.user}'.format(client))
   await sendprice()
 
-
+  
 # Function for our logic & embed we'll be using. Sending the embed then updating in chat every 5 mins
 async def sendprice():
-
-
   dt_string = datetime.now().strftime("%m/%d/%Y %H:%M:%S") # Returns GMT
 
   # Requests data from the Coingecko API
