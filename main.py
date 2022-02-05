@@ -32,11 +32,8 @@ async def sendprice():
 
   # Requests data from the Coingecko API
   URL ='https://api.coingecko.com/api/v3/simple/price?ids=blockchain-adventurers-guild&vs_currencies=usd'
-  r = requests.get(url=URL)
-  data = r.json()
+  data = requests.get(url=URL).json()
   price = data['blockchain-adventurers-guild']['usd']
-
-  # Grabs the "BAG Price" text channel object with its unique ID so we can use it to post there
   channel = client.get_channel(ID)
 
   # Embed starts
