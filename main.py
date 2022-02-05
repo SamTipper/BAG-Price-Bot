@@ -41,9 +41,9 @@ async def sendprice():
 
   # Embed starts
   embed = discord.Embed(
-  title = f'**BAG Price**',
-  description = 'Updated every five minutes',
-  colour = magenta
+    title = f'**BAG Price**',
+    description = 'Updated every five minutes',
+    colour = magenta
   )
 
   # All of the text fields & images for the embed
@@ -53,9 +53,10 @@ async def sendprice():
   
   embed.set_thumbnail(url='https://assets.coingecko.com/coins/images/14863/small/3iw7MAi.png?1618810870')
   embed.add_field(name='Price:', value=f'${price}', inline=False)
-  embed.add_field(name="BAG on Coingecko:", value=f'[coingecko](https://www.coingecko.com/en/coins/blockchain-adventure'
-                                                  f'rs-guild?__cf_chl_jschl_tk__=92_IPlKTDONz87G1t_oHkAR3B7rjTtWVHPkJn_'
-                                                  f'YEBoo-1641283101-0-gaNycGzNCNE)', inline=False)
+  embed.add_field(name="BAG on Coingecko:", 
+                  value=f'[coingecko](https://www.coingecko.com/en/coins/blockchain-adventure'
+                        f'rs-guild?__cf_chl_jschl_tk__=92_IPlKTDONz87G1t_oHkAR3B7rjTtWVHPkJn_'
+                        f'YEBoo-1641283101-0-gaNycGzNCNE)', inline=False)
   embed.add_field(name='Last Updated:', value=f'{dt_string} GMT', inline=False)
 
   # -------------------------------------------------------------------------------------------
